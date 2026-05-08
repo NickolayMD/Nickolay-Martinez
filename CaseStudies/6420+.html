@@ -1,0 +1,1021 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>6402+ Seeds of Memory | Case Study</title>
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Oswald:wght@500;700&family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../Css/style.css">
+    
+    <style>
+        /* --- Fallback Animation Keyframes --- */
+        @keyframes fadeInUp {
+            0% { opacity: 0; transform: translateY(40px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+
+        /* --- OVERRIDES: Switch this specific page to the Dark Brown & Green Theme --- */
+        :root {
+            /* 6402+ Specific Brand Variables */
+            --6402-plum: #701C1C;
+            --6402-yellow: #E9C35F;
+            --6402-eggshell: #F1E8D9;
+            --6402-dark-lava: #473B32;
+            --6402-pastel-brown: #836857;
+            --6402-rajah: #F3B163;
+            --6402-green: #5c6052; /* Olive green details */
+            --6402-light-green: #c5ccb3; /* Brighter sage green for text to contrast dark background */
+            
+            /* Overriding the global dark theme variables */
+            --bg-dark: var(--6402-dark-lava); /* Dark Brown */
+            --bg-darker: #362c25;
+            --bg-panel: #53453b;
+            --text-light: var(--6402-eggshell);
+            --text-muted: #d0c5b8;
+            --accent-teal: var(--6402-light-green); /* Green links */
+            --border-color: rgba(241, 232, 217, 0.15); /* Light border */
+            
+            --bg-case-study: var(--6402-dark-lava);
+            --bg-case-study-alt: #3d322a;
+        }
+
+        body {
+            background-color: var(--bg-case-study);
+            color: var(--text-light);
+        }
+
+        /* Override the Navbar to match the dark theme */
+        .navbar {
+            background-color: rgba(71, 59, 50, 0.85) !important;
+            border: 1px solid rgba(241, 232, 217, 0.15) !important;
+        }
+        .btn-primary.nav-contact {
+            background-color: var(--6402-green) !important;
+            color: var(--6402-eggshell) !important;
+        }
+        
+        /* --- 1. Immersive Hero --- */
+        .case-study-hero {
+            position: relative;
+            width: 100%;
+            min-height: 95vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 8rem 2rem 4rem;
+            background-image: url('../Img/portada behance.png');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+
+        .case-study-hero::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            /* Fades the image into the Dark Lava background */
+            background: linear-gradient(to bottom, rgba(71,59,50,0.4) 0%, rgba(71,59,50,1) 100%);
+            z-index: 1;
+        }
+
+        .hero-summary-block {
+            position: relative;
+            z-index: 2;
+            width: 100%;
+            max-width: 1200px;
+            display: flex;
+            flex-direction: column;
+            gap: 3rem;
+            opacity: 0;
+            animation: fadeInUp 1s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+            animation-delay: 0.2s;
+            text-align: center;
+        }
+
+        .hero-summary-block h1 {
+            font-family: 'Oswald', sans-serif;
+            font-size: clamp(3rem, 8vw, 6rem);
+            line-height: 1.1;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            color: var(--6402-eggshell);
+        }
+
+        .hook-highlight {
+            color: var(--6402-light-green);
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            display: block;
+            margin: 0 auto 1.5rem;
+            font-size: clamp(1.2rem, 3vw, 1.8rem);
+            max-width: 900px;
+            line-height: 1.4;
+        }
+
+        .project-meta-grid {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 3rem;
+            border-top: 1px solid var(--border-color);
+            border-bottom: 1px solid var(--border-color);
+            padding: 2rem 0;
+            margin-top: 2rem;
+        }
+
+        .meta-item h4 {
+            font-family: var(--font-heading);
+            color: var(--6402-light-green);
+            font-size: 0.9rem;
+            letter-spacing: 2px;
+            margin-bottom: 0.5rem;
+        }
+
+        .meta-item p {
+            font-family: 'Montserrat', sans-serif;
+            margin: 0;
+            font-size: 1rem;
+            color: var(--text-muted);
+        }
+
+        /* --- Behance Style Sections --- */
+        .case-study-body {
+            font-family: 'Montserrat', sans-serif; 
+        }
+
+        .cs-section {
+            padding: 8rem 2rem;
+        }
+
+        .cs-section.alt-bg {
+            background-color: var(--bg-case-study-alt);
+        }
+
+        .cs-container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .cs-section-title {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--6402-eggshell);
+            position: relative;
+            padding-bottom: 1rem;
+        }
+        
+        .cs-section-title::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 60px;
+            height: 4px;
+            background-color: var(--6402-green);
+            border-radius: 2px;
+        }
+
+        .cs-text {
+            color: var(--text-muted);
+            font-size: 1.15rem;
+            line-height: 1.8;
+            margin-bottom: 2rem;
+        }
+
+        /* --- 2. Overview (Problem/Solution) --- */
+        .overview-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            margin-top: 3rem;
+        }
+
+        .overview-card {
+            background: rgba(0, 0, 0, 0.15);
+            padding: 3rem;
+            border-radius: 20px;
+            border: 1px solid var(--border-color);
+        }
+
+        .overview-card h3 {
+            color: var(--6402-light-green);
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        /* --- 3. Process Steps --- */
+        .process-timeline {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        .process-step {
+            padding: 2rem;
+            background: rgba(92, 96, 82, 0.2); /* Tint of olive green */
+            border-top: 4px solid var(--6402-green);
+            border-radius: 8px;
+        }
+        .process-step h4 {
+            color: var(--6402-eggshell);
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        /* --- 4. User Research (Personas & Empathy Map) --- */
+        .personas-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-bottom: 4rem;
+        }
+        .persona-card {
+            background: rgba(0, 0, 0, 0.15);
+            padding: 2.5rem;
+            border-radius: 15px;
+            border-top: 4px solid var(--6402-rajah);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            border-left: 1px solid var(--border-color);
+            border-right: 1px solid var(--border-color);
+            border-bottom: 1px solid var(--border-color);
+        }
+        .persona-header {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 1.5rem;
+        }
+        .persona-avatar {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            background-color: var(--6402-green);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--6402-eggshell);
+            font-size: 1.8rem;
+            font-weight: 700;
+        }
+        .persona-info h3 {
+            color: var(--6402-light-green);
+            font-size: 1.4rem;
+            margin-bottom: 0.3rem;
+        }
+        .persona-info p {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            margin: 0;
+            line-height: 1.4;
+        }
+        .persona-details-grid {
+            display: grid;
+            gap: 1.5rem;
+        }
+        .persona-section h4 {
+            color: var(--6402-yellow);
+            font-size: 0.95rem;
+            margin-bottom: 0.5rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .persona-section ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+        .persona-section ul li {
+            position: relative;
+            padding-left: 1.2rem;
+            margin-bottom: 0.4rem;
+        }
+        .persona-section ul li::before {
+            content: '•';
+            position: absolute;
+            left: 0;
+            color: var(--6402-eggshell);
+        }
+
+        .empathy-map {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        .empathy-quadrant {
+            background-color: var(--bg-case-study); /* Contrast against alt-bg */
+            padding: 2.5rem;
+            border-radius: 15px;
+            border-left: 4px solid var(--6402-green);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+        .empathy-quadrant h3 {
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            color: var(--6402-light-green);
+        }
+
+        /* --- 5. Design System Showcase --- */
+        .ds-showcase {
+            background-color: #5c6052; /* Keeps the dark olive green to match the graphic perfectly */
+            padding: 4rem;
+            border-radius: 10px;
+            color: #F1E8D9 !important;
+            font-family: 'Montserrat', sans-serif;
+            margin-top: 3rem;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+        }
+        .ds-header {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 3rem;
+        }
+        .ds-title {
+            font-size: clamp(3.5rem, 8vw, 7rem);
+            font-weight: 700;
+            margin-bottom: 3rem;
+            line-height: 1;
+        }
+        .ds-typo-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            margin-bottom: 4rem;
+        }
+        .ds-typo-left {
+            display: grid;
+            grid-template-columns: 1fr auto;
+            gap: 1.5rem 2rem;
+            align-items: end;
+        }
+        .ds-typo-label {
+            font-size: 2.2rem;
+            font-weight: 700;
+        }
+        .ds-typo-value {
+            font-size: 2.2rem;
+            font-weight: 700;
+            text-align: right;
+        }
+        .ds-typo-label.small, .ds-typo-value.small {
+            font-size: 1.15rem;
+            font-weight: 500;
+            margin-top: 1.5rem;
+        }
+        .ds-typo-right {
+            font-size: 1.5rem;
+            line-height: 1.6;
+            font-weight: 400;
+            color: #d1d5c9 !important;
+        }
+        .ds-color-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        .ds-color-swatch {
+            padding: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            aspect-ratio: 16/9;
+            min-height: 160px;
+        }
+        .ds-color-codes {
+            font-size: 0.85rem;
+            line-height: 1.4;
+            font-weight: 400;
+        }
+        .ds-color-name {
+            font-size: 1.6rem;
+            font-weight: 600;
+        }
+        
+        /* Specific Swatch Colors */
+        .swatch-dark-lava { background-color: #473B32; color: #fff; }
+        .swatch-pastel-brown { background-color: #836857; color: #fff; }
+        .swatch-eggshell { background-color: #F1E8D9; color: #1a1a1a; }
+        .swatch-rajah { background-color: #F3B163; color: #1a1a1a; }
+        .swatch-arylide { background-color: #E9C35F; color: #1a1a1a; }
+        .swatch-pink-sherbet { background-color: #F289A1; color: #1a1a1a; }
+        .swatch-persian-pink { background-color: #ED7ABA; color: #1a1a1a; }
+        .swatch-coral-reef { background-color: #F87A64; color: #1a1a1a; }
+
+        .ui-kit-showcase {
+            margin-top: 3rem;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+            border: 1px solid var(--border-color);
+        }
+        .ui-kit-showcase img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* --- Wireframes Grid --- */
+        .wireframe-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr; /* 2-column distribution */
+            gap: 1rem; /* REDUCED GAP for a tighter collage look */
+            margin-top: 1rem;
+            align-items: start; /* Prevents cards from stretching vertically */
+        }
+        
+        /* Creates the staggered "collage" look on desktop */
+        @media (min-width: 769px) {
+            .wireframe-card:nth-child(even) {
+                margin-top: 1rem; /* REDUCED STAGGER to keep them closer together */
+            }
+        }
+
+        .wireframe-card {
+            background: rgba(0, 0, 0, 0.15);
+            border-radius: 15px;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+        .wireframe-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+        }
+        .wireframe-img {
+            width: 100%;
+            height: auto; /* Fully visible, no longer cropped */
+            display: block;
+            border-bottom: 1px solid var(--border-color);
+            background-color: #dcd3c6; /* Soft background in case wireframes have transparency */
+        }
+        .wireframe-label {
+            padding: 1.5rem;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            color: var(--6402-eggshell);
+            text-align: center;
+            font-size: 1.1rem;
+        }
+
+        /* --- 7. UI Showcase (Behance Style Mockup Layout) --- */
+        .ui-showcase-block {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            margin-top: 6rem;
+        }
+        
+        .ui-showcase-block.reverse {
+            direction: rtl; 
+        }
+        .ui-showcase-block.reverse > * {
+            direction: ltr;
+        }
+
+        .ui-text-content h3 {
+            font-size: 2rem;
+            color: var(--6402-eggshell);
+            margin-bottom: 1rem;
+        }
+        
+        .ui-text-content h3 span {
+            color: var(--6402-light-green);
+            display: block;
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 0.5rem;
+            font-family: 'Oswald', sans-serif;
+        }
+
+        .ui-mockup-placeholder {
+            width: 100%;
+            aspect-ratio: 4/5;
+            background: linear-gradient(45deg, #3d322a, #53453b);
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: rgba(241, 232, 217, 0.4);
+            font-weight: 600;
+            border: 1px solid var(--border-color);
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.3);
+            overflow: hidden; /* Clips any large images so they don't break the rounded corners */
+        }
+
+        /* Locks the image inside perfectly to the box */
+        .ui-mockup-placeholder img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Fills the box perfectly without stretching the image */
+            object-position: top center; /* Anchors the UI mockup to the top edge */
+        }
+
+        /* --- 8. Final Result Button Style --- */
+        .btn-final-result {
+            background-color: var(--6402-green);
+            color: var(--6402-eggshell);
+            padding: 18px 40px;
+            border-radius: 40px;
+            font-family: 'Oswald', sans-serif;
+            font-size: 1.2rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            display: inline-block;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            text-decoration: none;
+            border: 2px solid transparent;
+        }
+        .btn-final-result:hover {
+            background-color: var(--6402-light-green);
+            color: var(--6402-dark-lava);
+            transform: translateY(-5px);
+            box-shadow: 0 15px 25px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Responsive */
+        @media (max-width: 992px) {
+            .overview-grid, .ui-showcase-block, .personas-grid { grid-template-columns: 1fr; gap: 3rem; }
+            .ui-showcase-block.reverse { direction: ltr; }
+            .cs-section { padding: 5rem 2rem; }
+            .ds-typo-grid { grid-template-columns: 1fr; }
+            .ds-color-grid { grid-template-columns: repeat(2, 1fr); }
+            .ds-showcase { padding: 2rem; }
+        }
+        @media (max-width: 768px) {
+            .empathy-map { grid-template-columns: 1fr; }
+            /* Collapses the 2-column wireframe grid into 1 column on phones */
+            .wireframe-grid { grid-template-columns: 1fr; gap: 2rem; margin-top: 2rem; }
+            .project-meta-grid { flex-direction: column; text-align: center; gap: 1.5rem; }
+            .hero-summary-block h1 { font-size: 3.5rem; }
+            .ds-typo-label, .ds-typo-value { font-size: 1.5rem; }
+            .ds-typo-right { font-size: 1.2rem; }
+        }
+        @media (max-width: 576px) {
+            .ds-color-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-brand">
+            <a href="../index.html"><img src="../Img/profile-small.png" alt="Nickolay Profile" class="nav-profile-pic"></a>
+        </div>
+        <ul class="nav-links">
+            <li><a href="../index.html#home">Home</a></li>
+            <li><a href="../about.html">About</a></li>
+            <li><a href="../projects.html" style="color: var(--accent-teal);">Projects</a></li>
+        </ul>
+        <a href="../index.html#contact" class="btn-primary nav-contact">Contact</a>
+    </nav>
+
+    <!-- 1. Immersive Hero Section -->
+    <header class="case-study-hero">
+        <div class="hero-summary-block">
+            <div>
+                <span class="badge" style="background: var(--6402-green); color: var(--6402-eggshell); display: inline-block; padding: 6px 14px; border-radius: 20px; font-weight: bold; margin-bottom: 1.5rem; font-size: 0.8rem;">UI / UX Design</span>
+                <span class="hook-highlight">How do you design a digital space that transforms a devastating statistic into a deeply human, interactive memorial?</span>
+                <h1>6402+ | Seeds of Memory</h1>
+            </div>
+            
+            <div class="project-meta-grid">
+                <div class="meta-item">
+                    <h4>ROLE</h4>
+                    <p>UI/UX Designer & Researcher</p>
+                </div>
+                <div class="meta-item">
+                    <h4>TIMELINE</h4>
+                    <p>2023 - Ongoing</p>
+                </div>
+                <div class="meta-item">
+                    <h4>TOOLS</h4>
+                    <p>Figma, Illustrator, Miro</p>
+                </div>
+                <div class="meta-item">
+                    <h4>DELIVERABLES</h4>
+                    <p>UX Strategy, Wireframes, High-Fidelity UI</p>
+                </div>
+            </div>
+
+            <div style="margin-top: 2rem;">
+                <a href="https://wmco-c0.github.io/6402-Project/index.html" class="btn-final-result">View Interactive Prototype</a>
+            </div>
+        </div>
+    </header>
+
+    <div class="case-study-body">
+
+        <!-- 2. Project Overview -->
+        <section id="project-overview" class="cs-section alt-bg">
+            <div class="cs-container">
+                <h2 class="cs-section-title">Project Overview</h2>
+                <p class="cs-text">
+                    6402+ is not just a platform; it's a digital sanctuary. Designed to honor victims and preserve history, the interface guides users through a sensitive, empathetic journey bridging the gap between grief, data visualization, and collective remembrance.
+                </p>
+                
+                <div class="overview-grid">
+                    <div class="overview-card">
+                        <h3>The Challenge</h3>
+                        <p class="cs-text" style="font-size: 1rem; margin-bottom: 0;">
+                            How to visually and respectfully represent over 6,402 victims without reducing them to mere statistics or overwhelming the user with heavy data. The platform needed to feel human, accessible, and emotionally resonant.
+                        </p>
+                    </div>
+                    <div class="overview-card">
+                        <h3>The Solution</h3>
+                        <p class="cs-text" style="font-size: 1rem; margin-bottom: 0;">
+                            A carefully structured web experience that uses symbolic interactions—like planting a "seed of memory"—alongside a geographical map and audio-visual archives to ground the data in real human stories.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- My Role Section -->
+        <section class="section-padding section-hidden">
+            <h2 class="cs-section-title">My Role & Contributions</h2>
+            <p style="color: var(--text-muted); max-width: 800px; font-size: 1.1rem; line-height: 1.8;">
+                In the 6402+ project, my focus centered on bridging the gap between product strategy and technical execution. As the <strong>Product Manager</strong>, I guided the project's overarching direction, ensuring that our features consistently aligned with the highly sensitive nature of the memorial and the emotional needs of our users. 
+            </p>
+            
+            <div style="background-color: var(--bg-panel); padding: 2rem; border-radius: 15px; border-left: 4px solid var(--accent-teal); margin-top: 2rem; max-width: 900px; box-shadow: 0 10px 30px rgba(0,0,0,0.2);">
+                <h3 style="font-family: 'Montserrat', sans-serif; font-size: 1.3rem; margin-bottom: 0.8rem; color: var(--text-light); text-transform: uppercase; letter-spacing: 1px;">Unity Developer: The Map of Memories</h3>
+                <p style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.6; margin-bottom: 0;">
+                    Technically, my main role was developing the core interactive product—the "Map of Memories" (Un mapa de memorias). Using <strong>Unity</strong>, I was responsible for programming the map environment, plotting the data, and ensuring a seamless, respectful, and interactive geographic visualization of the victims' stories.
+                </p>
+            </div>
+        </section>
+
+        <!-- 3. The Process -->
+        <section class="cs-section alt-bg">
+            <div class="cs-container">
+                <h2 class="cs-section-title">Design Process</h2>
+                <p class="cs-text">
+                    Designing a platform dealing with memory and grief required a meticulous and highly sensitive approach. We followed a structured design thinking framework to ensure every interaction felt respectful.
+                </p>
+                
+                <div class="process-timeline">
+                    <div class="process-step">
+                        <h4>01. Empathize</h4>
+                        <p class="cs-text" style="font-size: 0.9rem; margin:0;">Understanding the emotional weight of the survivors and public.</p>
+                    </div>
+                    <div class="process-step">
+                        <h4>02. Define</h4>
+                        <p class="cs-text" style="font-size: 0.9rem; margin:0;">Establishing boundaries for respectful data visualization.</p>
+                    </div>
+                    <div class="process-step">
+                        <h4>03. Ideate</h4>
+                        <p class="cs-text" style="font-size: 0.9rem; margin:0;">Creating the "Seeds" concept and interaction models.</p>
+                    </div>
+                    <div class="process-step">
+                        <h4>04. Test & Iterate</h4>
+                        <p class="cs-text" style="font-size: 0.9rem; margin:0;">Ensuring accessibility and appropriate emotional pacing.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. User Research (Personas & Empathy Map) -->
+        <section class="cs-section">
+            <div class="cs-container">
+                <h2 class="cs-section-title">User Research: Target Audience</h2>
+                <p class="cs-text">
+                    To truly understand our users and tailor the experience to their specific needs, we developed detailed buyer personas based on our research. This helped us align the platform's goals with the expectations of key community members.
+                </p>
+                
+                <div class="personas-grid">
+                    <!-- Persona 1: Valentina -->
+                    <div class="persona-card">
+                        <div class="persona-header">
+                            <div class="persona-avatar">V</div>
+                            <div class="persona-info">
+                                <h3>Valentina Rojas</h3>
+                                <p>28 years old • Bogotá<br>Human Rights Defender</p>
+                            </div>
+                        </div>
+                        <div class="persona-details-grid">
+                            <div class="persona-section">
+                                <h4>Motivations</h4>
+                                <ul>
+                                    <li>Seek truth and justice</li>
+                                    <li>Honor the memory of the victims</li>
+                                </ul>
+                            </div>
+                            <div class="persona-section">
+                                <h4>Goals</h4>
+                                <ul>
+                                    <li>Give visibility to the stories</li>
+                                    <li>Connect with like-minded people</li>
+                                </ul>
+                            </div>
+                            <div class="persona-section">
+                                <h4>Frustrations</h4>
+                                <ul>
+                                    <li>Social indifference</li>
+                                    <li>Lack of empathy</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Persona 2: Carlos -->
+                    <div class="persona-card">
+                        <div class="persona-header">
+                            <div class="persona-avatar">C</div>
+                            <div class="persona-info">
+                                <h3>Carlos Gómez</h3>
+                                <p>45 years old • Medellín<br>Educator</p>
+                            </div>
+                        </div>
+                        <div class="persona-details-grid">
+                            <div class="persona-section">
+                                <h4>Motivations</h4>
+                                <ul>
+                                    <li>Educate about history</li>
+                                    <li>Build social awareness</li>
+                                </ul>
+                            </div>
+                            <div class="persona-section">
+                                <h4>Goals</h4>
+                                <ul>
+                                    <li>Find educational tools</li>
+                                    <li>Promote historical memory in youth</li>
+                                </ul>
+                            </div>
+                            <div class="persona-section">
+                                <h4>Frustrations</h4>
+                                <ul>
+                                    <li>Misinformation</li>
+                                    <li>Lack of interest among youth</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <h3 style="color: var(--6402-eggshell); font-size: 1.8rem; margin-top: 4rem; margin-bottom: 1.5rem; font-family: 'Montserrat', sans-serif;">Empathy Mapping</h3>
+                <p class="cs-text">
+                    By synthesizing these profiles, we mapped the collective emotional state, thoughts, and actions when interacting with the memorial. This guided every UX decision to ensure a respectful and impactful journey.
+                </p>
+                <div class="empathy-map">
+                    <div class="empathy-quadrant">
+                        <h3>THINKS & FEELS</h3>
+                        <p class="cs-text" style="font-size: 0.95rem; margin:0;">Focuses on the emotional weight of memory, a desire for justice, and the deep need for a respectful space to honor the past.</p>
+                    </div>
+                    <div class="empathy-quadrant">
+                        <h3>HEARS</h3>
+                        <p class="cs-text" style="font-size: 0.95rem; margin:0;">The voices of the past, stories from others who share the grief, and news regarding the historical context of the victims.</p>
+                    </div>
+                    <div class="empathy-quadrant">
+                        <h3>SEES</h3>
+                        <p class="cs-text" style="font-size: 0.95rem; margin:0;">A digital landscape of names, visual tributes, and the interactive "seeds" left by other users contributing to the memorial.</p>
+                    </div>
+                    <div class="empathy-quadrant">
+                        <h3>SAYS & DOES</h3>
+                        <p class="cs-text" style="font-size: 0.95rem; margin:0;">She actively participates by leaving a tribute, reading the stories, and sharing the memorial link to keep the collective memory alive.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. Design System Showcase -->
+        <section class="cs-section alt-bg">
+            <div class="cs-container" style="max-width: 1200px;">
+                <h2 class="cs-section-title">Visual Foundation</h2>
+                <p class="cs-text">
+                    The UI needed to be invisible enough to let the stories breathe, but present enough to guide the user. The typography and expanded 8-color palette draw from natural, grounded elements to honor the subject matter respectfully.
+                </p>
+                
+                <!-- Full Width Graphic Replica -->
+                <div class="ds-showcase">
+                    <div class="ds-header">Typography & Color</div>
+                    
+                    <div class="ds-title">Montserrat</div>
+                    
+                    <div class="ds-typo-grid">
+                        <div class="ds-typo-left">
+                            <div class="ds-typo-label">Title</div>
+                            <div class="ds-typo-value">35px Bold</div>
+                            
+                            <div class="ds-typo-label">Subtitle</div>
+                            <div class="ds-typo-value">30px Semibold</div>
+                            
+                            <div class="ds-typo-label small">Paragraph</div>
+                            <div class="ds-typo-value small">18px Medium</div>
+                        </div>
+                        <div class="ds-typo-right">
+                            Aa Bb Cc Dd Ff Gg Hh Ii Jj Kk Ll<br>
+                            Mm Nn Ññ Oo Pp Qq Rr Ss Tt Uu<br>
+                            Vv Ww Xx Yy Zz  0123456789<br>
+                            @ # $ % & * ¿ ¡ . , ; : - _ ' " « » á é í ó<br>
+                            ú ü ñ Ñ ! ? © ® °
+                        </div>
+                    </div>
+                    
+                    <div class="ds-color-grid">
+                        <!-- Top Row -->
+                        <div class="ds-color-swatch swatch-dark-lava">
+                            <div class="ds-color-codes">#473B32<br>RGB (71, 59, 50)</div>
+                            <div class="ds-color-name">Dark Lava</div>
+                        </div>
+                        <div class="ds-color-swatch swatch-pastel-brown">
+                            <div class="ds-color-codes">#836857<br>RGB (131, 104, 87)</div>
+                            <div class="ds-color-name">Pastel Brown</div>
+                        </div>
+                        <div class="ds-color-swatch swatch-eggshell">
+                            <div class="ds-color-codes">#F1E8D9<br>RGB (241, 232, 217)</div>
+                            <div class="ds-color-name">Eggshell</div>
+                        </div>
+                        <div class="ds-color-swatch swatch-rajah">
+                            <div class="ds-color-codes">#F3B163<br>RGB (243, 177, 99)</div>
+                            <div class="ds-color-name">Rajah</div>
+                        </div>
+                        
+                        <!-- Bottom Row -->
+                        <div class="ds-color-swatch swatch-arylide">
+                            <div class="ds-color-codes">#E9C35F<br>RGB (233, 195, 95)</div>
+                            <div class="ds-color-name">Arylide Yellow</div>
+                        </div>
+                        <div class="ds-color-swatch swatch-pink-sherbet">
+                            <div class="ds-color-codes">#F289A1<br>RGB (242, 137, 161)</div>
+                            <div class="ds-color-name">Pink Sherbet</div>
+                        </div>
+                        <div class="ds-color-swatch swatch-persian-pink">
+                            <div class="ds-color-codes">#ED7ABA<br>RGB (237, 122, 186)</div>
+                            <div class="ds-color-name">Persian Pink</div>
+                        </div>
+                        <div class="ds-color-swatch swatch-coral-reef">
+                            <div class="ds-color-codes">#F87A64<br>RGB (248, 122, 100)</div>
+                            <div class="ds-color-name">Coral Reef</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- UI Kit Addition -->
+                <h3 style="color: var(--6402-eggshell); font-size: 1.8rem; margin-top: 5rem; margin-bottom: 1.5rem; font-family: 'Montserrat', sans-serif;">UI Components & Iconography</h3>
+                <p class="cs-text">
+                    Building upon our foundational colors and typography, we developed a comprehensive UI Kit. This ensures visual consistency across the platform while providing scalable, accessible components for future development.
+                </p>
+                <div class="ui-kit-showcase">
+                    <img src="../Img/6402UiKit.png" alt="6402+ UI Kit Components">
+                </div>
+
+            </div>
+        </section>
+
+        <!-- 6. Wireframes & Structure -->
+        <section class="cs-section">
+            <div class="cs-container">
+                <h2 class="cs-section-title">Wireframes & Structure</h2>
+                <p class="cs-text">
+                    Before moving to high-fidelity designs, I created structural wireframes to map out the user journey. This phase focused entirely on information architecture, prioritizing clear storytelling and intuitive navigation without the distraction of visual styles.
+                </p>
+                
+                <div class="wireframe-grid">
+                    <div class="wireframe-card">
+                        <img src="../Img/Home6402+.png" alt="Home Wireframe" class="wireframe-img">
+                        <div class="wireframe-label">Home</div>
+                    </div>
+
+                    <div class="wireframe-card">
+                        <img src="../Img/Perfiles Victima6402+.png" alt="Victim Profiles Wireframe" class="wireframe-img">
+                        <div class="wireframe-label">Victim Profiles</div>
+                    </div>                  
+
+                    <div class="wireframe-card">
+                        <img src="../Img/Formulario6402+.png" alt="Add Your Seed Form" class="wireframe-img">
+                        <div class="wireframe-label">Add Your Seed</div>
+                    </div>
+
+                    <div class="wireframe-card">
+                        <img src="../Img/Mapa de memoria wireframe6402+.png" alt="Map of Memories Wireframe" class="wireframe-img">
+                        <div class="wireframe-label">Map of Memories</div>
+                    </div>                    
+                </div>
+            </div>
+        </section>
+
+        <!-- 7. High-Fidelity UI Showcase -->
+        <section class="cs-section alt-bg">
+            <div class="cs-container">
+                <h2 class="cs-section-title">Core Experiences</h2>
+                <p class="cs-text">
+                    I designed four primary interaction pillars that turn passive reading into active participation.
+                </p>
+                
+                <!-- Showcase 1 -->
+                <div class="ui-showcase-block">
+                    <div class="ui-text-content">
+                        <h3><span>Micro-Interaction</span>Add Your Seed</h3>
+                        <p class="cs-text">A core interaction allowing users to leave a digital tribute ("Add your seed"). This was designed to feel organic, giving users a tangible, visual way to participate in the memorial and watch the community support grow in real-time.</p>
+                    </div>
+                    <div class="ui-mockup-placeholder">
+                        <img src="../Img/Formulario.png" alt="Add Your Seed UI Mockup">
+                    </div>
+                </div>
+
+                <!-- Showcase 2 (Reversed Layout) -->
+                <div class="ui-showcase-block reverse">
+                    <div class="ui-text-content">
+                        <h3><span>Data Visualization</span>A Map of Memories</h3>
+                        <p class="cs-text">An interactive geographical visualization. By grounding the data in real locations, the map helps users comprehend the scale and reality of the events. Filtering tools allow users to search by region or year without feeling overwhelmed.</p>
+                    </div>
+                    <div class="ui-mockup-placeholder">
+                        <img src="../Img/Un Mapa de Memorias.png" alt="Map of Memories UI Mockup">
+                    </div>
+                </div>
+
+                <!-- Showcase 3 -->
+                <div class="ui-showcase-block">
+                    <div class="ui-text-content">
+                        <h3><span>Content Layout</span>Discover Their Stories</h3>
+                        <p class="cs-text">A dedicated, distraction-free reading environment designed to humanize the statistics. Focuses heavily on legibility and emotional resonance through careful typography, ample whitespace, and integrated "Voices of the past" audio controls.</p>
+                    </div>
+                    <div class="ui-mockup-placeholder">
+                        <img src="../Img/Testimonios.png" alt="Discover Their Stories UI Mockup">
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- 8. Conclusion / Takeaways -->
+        <section class="cs-section">
+            <div class="cs-container" style="text-align: center; max-width: 800px;">
+                <h2 class="cs-section-title" style="display: inline-block; padding-bottom: 1rem;">Key Takeaways</h2>
+                <p class="cs-text" style="margin-top: 2rem;">
+                    Designing 6402+ taught me that UX is not just about reducing friction; sometimes, it's about creating <strong>meaningful friction</strong>. 
+                    <br><br>
+                    By carefully pacing the user journey, we allowed space for reflection. The biggest challenge was balancing comprehensive data with emotional sensitivity, resulting in a platform that doesn't just display information, but facilitates a collective grieving and remembrance process.
+                </p>
+            </div>
+        </section>
+
+        <!-- 9. Final Result (CTA) -->
+        <section class="cs-section alt-bg">
+            <div class="cs-container" style="text-align: center; max-width: 800px;">
+                <h2 class="cs-section-title" style="display: inline-block; padding-bottom: 1rem;">The Final Result</h2>
+                <p class="cs-text" style="margin-top: 2rem; margin-bottom: 3rem;">
+                    The culmination of this research and design process is a fully interactive prototype that brings the 6402+ memorial to life. Experience the sensitive micro-interactions, explore the map, and discover the stories firsthand.
+                </p>
+                <!-- Simply replace the '#' in the href below with the link to your prototype or live site -->
+                <a href="https://wmco-c0.github.io/6402-Project/index.html" class="btn-final-result">View Interactive Prototype</a>
+            </div>
+        </section>
+
+    </div>
+
+    <!-- Footer Section -->
+    <footer class="site-footer">
+        <div class="footer-content section-padding" style="padding-top: 4rem; padding-bottom: 4rem;">
+            <div class="footer-brand">
+                <h3>NICKOLAY MARTINEZ</h3>
+                <p>Digital Designer & Front-end Developer</p>
+            </div>
+            
+            <div class="footer-contact">
+                <div class="footer-col">
+                    <span>Email:</span>
+                    <a href="mailto:nickolay.martinezd@gmail.com">nickolay.martinezd@gmail.com</a>
+                </div>
+                <div class="footer-col">
+                    <span>Social:</span>
+                    <div class="footer-socials">
+                        <a href="#">Behance</a>
+                        <a href="#">Dribbble</a>
+                        <a href="#">LinkedIn</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2026 Nickolay Martinez. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <div id="smartScrollWrapper" class="smart-scroll-wrapper">
+        <button id="smartScrollBtn" class="smart-scroll-btn" aria-label="Scroll page">
+            <svg class="scroll-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+        </button>
+    </div>
+
+    <!-- Include the main JS file for navbar interactions and scroll animations -->
+    <script src="../Js/script.js"></script>
+</body>
+</html>

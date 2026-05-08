@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Projects | Nickolay Martinez</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Oswald:wght@500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="Css/style.css">
+    
+    <!-- Projects Page Specific Overrides -->
+    <style>
+        /* Change from flex column to a 3-column CSS Grid */
+        .projects-grid {
+            display: grid !important;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+
+        /* Make cards smaller to fit the 3-column layout nicely */
+        .project-card {
+            height: 360px;
+            padding: 1rem;
+        }
+
+        /* Scale down the info block and typography to match the smaller cards */
+        .project-info-block {
+            padding: 1.2rem;
+            border-radius: 12px;
+        }
+
+        .project-info-block h3 {
+            font-size: 1.2rem;
+            margin-bottom: 0.4rem;
+        }
+
+        .project-info-block p {
+            font-size: 0.8rem;
+        }
+
+        .badge {
+            font-size: 0.7rem;
+            padding: 3px 10px;
+            margin-bottom: 0.6rem;
+        }
+
+        /* Responsive Breakpoints for the Grid */
+        @media (max-width: 992px) {
+            .projects-grid {
+                grid-template-columns: repeat(2, 1fr); /* 2 columns on tablet */
+            }
+        }
+
+        @media (max-width: 768px) {
+            .projects-grid {
+                grid-template-columns: 1fr; /* 1 column on mobile */
+            }
+            .project-card {
+                height: 380px; /* Slightly taller on mobile for readability */
+            }
+        }
+
+        /* NEW: Styles for the subsection titles */
+        .subsection-title {
+            font-family: 'Oswald', sans-serif;
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-top: 5rem; /* Adds space above the section */
+            margin-bottom: 3rem; /* INCREASED: Space between title and cards */
+            padding-bottom: 1rem; /* Space between the text and the line */
+            border-bottom: 1px solid var(--border-color); /* ADDED: Line under the title */
+            text-transform: uppercase;
+            color: var(--text-light);
+            letter-spacing: 1px;
+        }
+        
+        .subsection-title:first-of-type {
+            margin-top: 0; /* Removes extra space above the very first title */
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-brand">
+            <a href="index.html"><img src="Img/profile-small.png" alt="Nickolay Profile" class="nav-profile-pic"></a>
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html#home">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="projects.html" style="color: var(--accent-teal);">Projects</a></li>
+        </ul>
+        <a href="index.html#contact" class="btn-primary nav-contact">Contact</a>
+    </nav>
+
+    <!-- Page Header -->
+    <header class="section-padding" style="padding-top: 12rem; padding-bottom: 2rem; text-align: center; max-width: 800px;">
+        <h1 style="font-family: 'Oswald', sans-serif; font-weight: 700; font-size: clamp(3.5rem, 8vw, 6rem); line-height: 1; letter-spacing: -2px; margin-bottom: 1rem; text-transform: uppercase;">All Projects</h1>
+        <p style="color: var(--text-muted); font-size: 1.1rem;">Explore my complete portfolio of digital design, branding, and front-end development work.</p>
+    </header>
+
+    <!-- All Projects Section -->
+    <section class="section-padding" style="padding-top: 2rem;">
+        
+        <!-- Subsection 1: Case Studies -->
+        <h2 class="subsection-title">Case Studies</h2>
+        <div class="projects-grid">
+            
+            <!-- Project 1 -->
+            <a href="./CaseStudies/6420+.html" class="project-card" style="background-image: url('Img/project1-bg.png');">
+                <div class="project-info-block">
+                    <span class="badge">UI / UX Design</span>
+                    <h3>6402+ | INTERACTIVE MEMORIAL</h3>
+                    <p>Created promotional materials for the "Summer Vibes Festival," including posters, flyers, and social media graphics.</p>
+                </div>
+            </a>
+
+            <!-- Project 2 -->
+            <a href="./CaseStudies/G-66.html" class="project-card" style="background-image: url('Img/project2-bg.png');">
+                <div class="project-info-block">
+                    <span class="badge">Branding</span>
+                    <h3>CORAL SPIRAL ABSTRACT</h3>
+                    <p>Description: A visually striking 3D abstract artwork featuring a coral-colored spiral form with smooth, flowing curves and a soft pink gradient background.</p>
+                </div>
+            </a>
+
+            <!-- Project 3 -->
+            <div class="project-card" style="background-image: url('Img/project3-bg.png');">
+                <div class="project-info-block">
+                    <span class="badge">UI / UX Design</span>
+                    <h3>SHOPEASE REDESIGN SPRINT</h3>
+                    <p>Redesigned the "ShopEase" e-commerce app to enhance user experience. Focused on simplifying navigation and optimizing the checkout process.</p>
+                </div>
+            </div>
+
+        </div> <!-- End Case Studies Grid -->
+
+        <!-- Subsection 2: Design Concepts -->
+        <h2 class="subsection-title">Design Concepts</h2>
+        <div class="projects-grid">
+
+            <!-- Project 4 (Placeholder) -->
+            <div class="project-card" style="background-image: url('Img/project1-bg.png'); filter: hue-rotate(45deg);">
+                <div class="project-info-block">
+                    <span class="badge">Web Design</span>
+                    <h3>FINTECH DASHBOARD UI</h3>
+                    <p>A comprehensive web dashboard designed for a financial technology startup, focusing on data visualization and clear user flows.</p>
+                </div>
+            </div>
+
+            <!-- Project 5 (Placeholder) -->
+            <div class="project-card" style="background-image: url('Img/project2-bg.png'); filter: hue-rotate(-90deg);">
+                <div class="project-info-block">
+                    <span class="badge">Front-End</span>
+                    <h3>ECO-FRIENDLY E-COMMERCE</h3>
+                    <p>Developed a custom, highly responsive e-commerce front-end experience using modern CSS and Javascript frameworks.</p>
+                </div>
+            </div>
+
+            <!-- Project 6 (Placeholder) -->
+            <div class="project-card" style="background-image: url('Img/project3-bg.png'); filter: hue-rotate(180deg);">
+                <div class="project-info-block">
+                    <span class="badge">Branding</span>
+                    <h3>NEXUS BRAND IDENTITY</h3>
+                    <p>Complete brand identity design from scratch, including logo design, typography selection, and a comprehensive brand guideline document.</p>
+                </div>
+            </div>
+
+        </div> <!-- End Design Concepts Grid -->
+        
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="site-footer">
+        <div class="footer-content section-padding" style="padding-top: 4rem; padding-bottom: 4rem;">
+            <div class="footer-brand">
+                <h3>NICKOLAY MARTINEZ</h3>
+                <p>Digital Designer & Front-end Developer</p>
+            </div>
+            
+            <div class="footer-contact">
+                <div class="footer-col">
+                    <span>Email:</span>
+                    <a href="mailto:nickolay.martinezd@gmail.com">nickolay.martinezd@gmail.com</a>
+                </div>
+                <div class="footer-col">
+                    <span>Social:</span>
+                    <div class="footer-socials">
+                        <a href="#">Behance</a>
+                        <a href="#">Dribbble</a>
+                        <a href="#">LinkedIn</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2026 Nickolay Martinez. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="Js/script.js"></script>
+</body>
+</html>

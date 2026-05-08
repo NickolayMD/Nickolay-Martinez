@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Nickolay | Digital Designer</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Oswald:wght@500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="Css/style.css">
+    
+    <style>
+        /* Page-Specific Tweaks (Keeps global style.css clean) */
+        .about-hero {
+            padding-top: 12rem; 
+            align-items: center; 
+        }
+        
+        .profile-col {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .story-text p {
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+        }
+        
+        .editorial-col {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-brand">
+            <a href="index.html"><img src="Img/profile-small.png" alt="Nickolay Profile" class="nav-profile-pic"></a>
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html#home">Home</a></li>
+            <li><a href="about.html" style="color: var(--accent-teal);">About</a></li>
+            <li><a href="projects.html">Projects</a></li>
+        </ul>
+        <a href="index.html#contact" class="btn-primary nav-contact">Contact</a>
+    </nav>
+
+    <!-- 1. The Hook (2-Column Hero) -->
+    <header id="about-hero" class="section-padding grid-2-col about-hero">
+        
+        <!-- Left Column: Picture & CV Button -->
+        <div class="profile-col">
+            <img src="Img/profile-large.png" alt="Nickolay Martinez" class="hero-img" style="max-width: 400px; width: 100%;">
+            
+            <!-- FIXED: Reused 'btn-outline' and 'direct-action-btn' to perfectly match the home page style and hover animations -->
+            <a href="Assets/Nickolay_Martinez_CV.pdf" download="Nickolay_Martinez_CV.pdf" class="btn-outline direct-action-btn" style="margin-top: 1.5rem;">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="contact-icon">
+                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                    <polyline points="7 10 12 15 17 10"></polyline>
+                    <line x1="12" y1="15" x2="12" y2="3"></line>
+                </svg>
+                <span>Download CV</span>
+            </a>
+        </div>
+
+        <!-- Right Column: The Origin Story -->
+        <div class="story-text">
+            <h1 class="highlight" style="font-size: clamp(3rem, 6vw, 4.5rem); line-height: 1; margin-bottom: 1.5rem;">MY STORY</h1>
+            <h2 style="font-size: 1.4rem; color: var(--text-light); margin-bottom: 2rem; font-family: var(--font-body); font-weight: 400; line-height: 1.6;">
+                My path to design wasn’t a straight line, it was an iterative process.
+            </h2>
+            <p>
+                I actually began my academic career in Biomedical Engineering, driven by an early interest in medicine. It was there that I first learned how to write code and think in complex, logical systems. But as the semesters went on, I realized something was missing: the creative visual expression I had always admired in graphic design, and the immersive mechanics of the video games I grew up playing. 
+            </p>
+            <p>
+                When I discovered Interaction Design, it was a lightbulb moment. It was the exact intersection of art and logic I had been looking for a discipline where I could code the structure and design the soul of a digital experience. I took the leap, changed my trajectory, and finally found my place.
+            </p>
+        </div>
+    </header>
+
+    <!-- 2. The Value Proposition -->
+    <!-- FIXED: The section now spans 100% width for the background, and the inner div controls the max-width (just like 6402+) -->
+    <section id="project-overview" style="background-color: var(--bg-darker); width: 100%;">
+        <div class="section-padding">
+            <div class="editorial-col story-text">
+                <h2 style="font-size: 2.5rem; margin-bottom: 1.5rem; color: var(--accent-teal);">I don't just design for the ideal scenario; I design for the build.</h2>
+                <p>
+                    My secret sauce is simple: I speak both languages. While purely visual designers sometimes create beautiful concepts that hit a wall during development, my background in Front-End Development grounds my creativity in reality. 
+                </p>
+                <p>
+                    Having a technical baseline in tools like React, Node.js, and Unity allows me to instantly evaluate the feasibility of a feature and set realistic timelines. I don't just advocate for the user persona; I translate their needs into consistent, actionable functional and non-functional requirements, ensuring a seamless handoff to engineering.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. The Human Element (2-Column Layout) -->
+    <section id="gamer-mindset" class="section-padding grid-2-col" style="align-items: center;">
+        <div class="story-text">
+            <h2 style="font-size: 2.5rem; margin-bottom: 1.5rem;">The Gamer's Mindset: Strategy, Patience, and Pressure.</h2>
+            <p>
+                Outside the code editor and Figma files, my professional mindset is heavily shaped by the games that brought me to this industry. I am a massive fan of <strong>Souls-like games</strong> (Dark Souls 3, Elden Ring, Sekiro), which have hardwired me to tackle difficult objectives strategically, persevere through roadblocks, and celebrate the small milestones along the way. 
+            </p>
+            <p>
+                <strong>Open-world games</strong> like Skyrim and Crimson Desert taught me the value of world-building and narrative depth. (And yes, I am the player who completes every single side quest before touching the main storyline, a habit that translates perfectly to my obsession with solving edge cases before launch). 
+            </p>
+            <p>
+                Finally, <strong>high-speed hero shooters</strong> like Overwatch and Marvel Rivals have trained me to thrive under pressure, adapt quickly to changing scenarios, and find the best possible solutions when the clock is ticking.
+            </p>
+        </div>
+        
+        <div style="background-color: var(--bg-panel); padding: 4rem; border-radius: 30px; border-left: 4px solid var(--accent-teal);">
+            <p style="font-family: var(--font-heading); font-size: 2rem; line-height: 1.3; color: var(--text-light); text-transform: uppercase;">
+                "I treat design like an open-world game: explore every edge case before completing the main quest."
+            </p>
+        </div>
+    </section>
+
+    <!-- 4. CTA / Let's Work Together -->
+    <!-- FIXED: Applied the same 100% width wrapper logic here -->
+    <section id="about-cta" style="background-color: var(--bg-darker); width: 100%;">
+        <div class="section-padding" style="text-align: center;">
+            <div class="editorial-col">
+                <h2 class="highlight" style="font-size: 4rem; margin-bottom: 1rem;">LET'S BUILD</h2>
+                <p style="font-size: 1.2rem; margin-bottom: 3rem;">I am a pragmatic problem solver and a passionate visual storyteller. I am currently looking for full-time opportunities where I can bring this blend of technical realism, empathetic design, and strategic adaptability to a forward-thinking team.</p>
+                
+                <div class="direct-contact-actions" style="justify-content: center;">
+                    <button id="copyEmailBtn" class="btn-outline direct-action-btn" aria-label="Copy Email">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="contact-icon">
+                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                            <polyline points="22,6 12,13 2,6"></polyline>
+                        </svg>
+                        <span>Copy Email</span>
+                        <span class="copy-tooltip">Copied!</span>
+                    </button>
+                    
+                    <a href="https://www.linkedin.com/in/nickolay-martinez-657822303/?locale=en" target="_blank" rel="noopener noreferrer" class="btn-outline direct-action-btn">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="contact-icon">
+                            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                            <rect x="2" y="9" width="4" height="12"></rect>
+                            <circle cx="4" cy="4" r="2"></circle>
+                        </svg>
+                        <span>LinkedIn Profile</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="site-footer">
+        <div class="footer-content section-padding" style="padding-top: 4rem; padding-bottom: 4rem;">
+            <div class="footer-brand">
+                <h3>NICKOLAY MARTINEZ</h3>
+                <p>Digital Designer & Front-end Developer</p>
+            </div>
+            
+            <div class="footer-contact">
+                <div class="footer-col">
+                    <span>Email:</span>
+                    <a href="mailto:nickolay.martinezd@gmail.com">nickolay.martinezd@gmail.com</a>
+                </div>
+                <div class="footer-col">
+                    <span>Social:</span>
+                    <div class="footer-socials">
+                        <a href="https://www.behance.net/nickolamartine1">Behance</a>
+                        <a href="#">Dribbble</a>
+                        <a href="https://www.linkedin.com/in/nickolay-martinez-657822303/?locale=en">LinkedIn</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2026 Nickolay Martinez. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Smart Scroll Button -->
+    <div id="smartScrollWrapper" class="smart-scroll-wrapper" data-target="#value-prop">
+        <button id="smartScrollBtn" class="smart-scroll-btn" aria-label="Scroll page">
+            <svg class="scroll-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+        </button>
+    </div>
+
+    <script src="Js/script.js"></script>
+</body>
+</html>

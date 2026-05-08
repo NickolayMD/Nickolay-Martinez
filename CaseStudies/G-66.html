@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rout G-66 | Case Study</title>
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Oswald:wght@500;700&family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../Css/style.css">
+    
+    <style>
+        /* --- Fallback Animation Keyframes --- */
+        @keyframes fadeInUp {
+            0% { opacity: 0; transform: translateY(40px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+
+        /* --- ROUT G-66 THEME OVERRIDES --- */
+        :root {
+            /* Retro Horror Palette based on the uploaded image */
+            --g66-primary: #000800; /* Rich dark background */
+            --g66-accent: #568D02; /* Striking retro red/orange */
+            --g66-accent-hover: #63A400; /* Brighter highlight */
+            --g66-light: #F2EBE5; /* Warm off-white for text */
+            --g66-panel: #001200; /* Elevated card background */
+            --g66-border: rgba(217, 40, 28, 0.3); /* Accent tinted border */
+            
+            --bg-case-study: var(--g66-primary);
+            --bg-case-study-alt: var(--g66-panel);
+            --text-light: var(--g66-light);
+            --text-muted: #A39B95; /* Warm grey for secondary text */
+            --border-color: rgba(0, 8, 0, 0.08); /* Subtle light border */
+
+            /* Overriding global theme variables to color the Footer correctly */
+            --bg-dark: var(--g66-primary);
+            --bg-darker: var(--g66-panel);
+            --accent-teal: var(--g66-accent);
+        }
+
+        body {
+            background-color: var(--bg-case-study);
+            color: var(--text-light);
+            /* Adds a slight noise texture for that retro vibe */
+            background-image: url('data:image/svg+xml,%3Csvg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"%3E%3Cfilter id="noiseFilter"%3E%3CfeTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" stitchTiles="stitch"/%3E%3C/filter%3E%3Crect width="100%25" height="100%25" filter="url(%23noiseFilter)" opacity="0.03"/%3E%3C/svg%3E');
+        }
+
+        /* Override the Navbar */
+        .navbar {
+            background-color: rgba(18, 18, 18, 0.9) !important;
+            border: 1px solid var(--border-color) !important;
+            backdrop-filter: blur(10px);
+        }
+        .btn-primary.nav-contact {
+            background-color: var(--g66-accent) !important;
+            color: #fff !important;
+        }
+        
+        /* --- 1. Immersive Hero --- */
+        .case-study-hero {
+            position: relative;
+            width: 100%;
+            min-height: 95vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 8rem 2rem 4rem;
+            background-color: var(--g66-primary);
+            /* TODO: Replace with an actual screenshot of the game */
+            background-image: url('../Img/project2-bg.png'); 
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+
+        .case-study-hero::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: linear-gradient(to bottom, rgba(4, 15, 0, 0.7) 0%, rgb(0, 8, 0) 100%);
+            z-index: 1;
+        }
+
+        .hero-summary-block {
+            position: relative;
+            z-index: 2;
+            width: 100%;
+            max-width: 1200px;
+            display: flex;
+            flex-direction: column;
+            gap: 3rem;
+            opacity: 0;
+            animation: fadeInUp 1s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+            animation-delay: 0.2s;
+            text-align: center;
+        }
+
+        .hero-summary-block h1 {
+            font-family: 'Oswald', sans-serif;
+            font-size: clamp(3rem, 8vw, 6rem);
+            line-height: 1.1;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            color: var(--text-light);
+            letter-spacing: 2px;
+        }
+
+        .hook-highlight {
+            color: var(--g66-accent-hover);
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            display: block;
+            margin: 0 auto 1.5rem;
+            font-size: clamp(1.2rem, 3vw, 1.8rem);
+            max-width: 900px;
+            line-height: 1.4;
+        }
+
+        .project-meta-grid {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 3rem;
+            border-top: 1px solid var(--border-color);
+            border-bottom: 1px solid var(--border-color);
+            padding: 2rem 0;
+            margin-top: 2rem;
+        }
+
+        .meta-item h4 {
+            font-family: 'Oswald', sans-serif;
+            color: var(--g66-accent-hover);
+            font-size: 0.9rem;
+            letter-spacing: 2px;
+            margin-bottom: 0.5rem;
+            text-transform: uppercase;
+        }
+
+        .meta-item p {
+            font-family: 'Montserrat', sans-serif;
+            margin: 0;
+            font-size: 1rem;
+            color: var(--text-muted);
+        }
+
+        /* --- Global Section Styles --- */
+        .case-study-body { font-family: 'Montserrat', sans-serif; }
+        .cs-section { padding: 8rem 2rem; }
+        .cs-section.alt-bg { background-color: var(--bg-case-study-alt); }
+        .cs-container { max-width: 1000px; margin: 0 auto; }
+
+        .cs-section-title {
+            font-weight: 700;
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--text-light);
+            position: relative;
+            padding-bottom: 1rem;
+        }
+        
+        .cs-section-title::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 60px;
+            height: 4px;
+            background-color: var(--g66-accent);
+            border-radius: 2px;
+        }
+
+        .cs-text {
+            color: var(--text-muted);
+            font-size: 1.15rem;
+            line-height: 1.8;
+            margin-bottom: 2rem;
+        }
+
+        /* --- Content Grids & Cards --- */
+        .overview-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            margin-top: 3rem;
+        }
+        .overview-card {
+            background: rgba(0, 0, 0, 0.4);
+            padding: 3rem;
+            border-radius: 20px;
+            border: 1px solid var(--border-color);
+            border-top: 3px solid var(--g66-accent);
+        }
+        .overview-card h3 {
+            color: var(--g66-light);
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            font-family: 'Oswald', sans-serif;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        /* Target Audience Grid */
+        .audience-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        .audience-card {
+            background: var(--bg-case-study);
+            padding: 2.5rem;
+            border-radius: 15px;
+            border: 1px solid var(--border-color);
+            text-align: center;
+        }
+        .audience-card h4 {
+            color: var(--g66-accent-hover);
+            font-family: 'Oswald', sans-serif;
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+        }
+        .audience-card p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        /* Mockup Block */
+        .ui-showcase-block {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            margin-top: 6rem;
+        }
+        .ui-showcase-block.reverse { direction: rtl; }
+        .ui-showcase-block.reverse > * { direction: ltr; }
+
+        .ui-text-content h3 {
+            font-size: 2rem;
+            color: var(--text-light);
+            margin-bottom: 1rem;
+            font-family: 'Oswald', sans-serif;
+        }
+        .ui-text-content h3 span {
+            color: var(--g66-accent-hover);
+            display: block;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            margin-bottom: 0.5rem;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .ui-mockup-placeholder {
+            width: 100%;
+            aspect-ratio: 4/3;
+            background: var(--g66-primary);
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-muted);
+            border: 1px solid var(--border-color);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+            overflow: hidden;
+            position: relative;
+        }
+        .ui-mockup-placeholder img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+        }
+        
+        .mockup-label {
+            position: absolute;
+            bottom: 1rem;
+            right: 1rem;
+            background: rgba(0,0,0,0.7);
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            font-size: 0.8rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            color: var(--g66-light);
+            border: 1px solid var(--border-color);
+        }
+
+        /* Paper Prototype Grid */
+        .paper-prototype-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .paper-img-container {
+            border-radius: 10px;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            aspect-ratio: 4/3; /* Keeps all images roughly the same shape */
+        }
+        
+        .paper-img-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            opacity: 0.8;
+            transition: opacity 0.3s ease;
+        }
+        
+        .paper-img-container:hover img {
+            opacity: 1; /* Slight hover effect to highlight the image */
+        }
+
+        /* Button */
+        .btn-final-result {
+            background-color: var(--g66-accent);
+            color: #ffffff !important; /* Force white text */
+            padding: 18px 40px;
+            border-radius: 4px; /* Sharper corners for retro feel */
+            font-family: 'Oswald', sans-serif;
+            font-size: 1.2rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            transition: all 0.3s ease;
+            display: inline-block;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+            text-decoration: none;
+            border: 1px solid var(--g66-accent-hover);
+        }
+        .btn-final-result:hover {
+            background-color: var(--g66-accent-hover);
+            color: #ffffff !important; /* Keep text white on hover */
+            transform: translateY(-5px);
+            box-shadow: 0 15px 25px rgba(86, 141, 2, 0.3); /* Green shadow instead of red */
+        }
+
+        /* Responsive */
+        @media (max-width: 992px) {
+            .overview-grid, .ui-showcase-block, .audience-grid { grid-template-columns: 1fr; gap: 3rem; }
+            .ui-showcase-block.reverse { direction: ltr; }
+            .cs-section { padding: 5rem 2rem; }
+            .youtube-video { width: 100%; height: auto; aspect-ratio: 16/9; }
+        }
+        @media (max-width: 768px) {
+            .project-meta-grid { flex-direction: column; text-align: center; gap: 1.5rem; }
+            .hero-summary-block h1 { font-size: 3.5rem; }
+            .paper-prototype-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-brand">
+            <a href="../index.html"><img src="../Img/profile-small.png" alt="Nickolay Profile" class="nav-profile-pic"></a>
+        </div>
+        <ul class="nav-links">
+            <li><a href="../index.html#home">Home</a></li>
+            <li><a href="../about.html">About</a></li>
+            <li><a href="../projects.html" style="color: var(--g66-accent-hover);">Projects</a></li>
+        </ul>
+        <a href="../index.html#contact" class="btn-primary nav-contact">Contact</a>
+    </nav>
+
+    <!-- 1. Immersive Hero Section -->
+    <header class="case-study-hero">
+        <div class="hero-summary-block">
+            <div>
+                <span class="badge" style="background: var(--g66-accent); color: #fff; display: inline-block; padding: 6px 14px; border-radius: 4px; font-weight: bold; margin-bottom: 1.5rem; font-size: 0.8rem; letter-spacing: 1px; text-transform: uppercase;">Game Design / UI UX</span>
+                <span class="hook-highlight">Can you distinguish the living from the dead before time runs out?</span>
+                <h1>Rout G-66</h1>
+            </div>
+            
+            <div class="project-meta-grid">
+                <div class="meta-item">
+                    <h4>CREATORS</h4>
+                    <p>Nickolay Martínez & Sara Ávila</p>
+                </div>
+                <div class="meta-item">
+                    <h4>GENRE</h4>
+                    <p>Psychological Suspense / Retro Horror</p>
+                </div>
+                <div class="meta-item">
+                    <h4>TOOLS</h4>
+                    <p>Figma, Illustrator, Unity (Audio/UI)</p>
+                </div>
+                <div class="meta-item">
+                    <h4>DELIVERABLES</h4>
+                    <p>UX Strategy, Wireframes, High-Fidelity UI</p>
+                </div>
+            </div>
+
+            <div style="margin-top: 2rem;">
+                <a href="https://nidumar.itch.io/g-66-ruta-fantasma" target="_blank" class="btn-final-result">View Final Result</a>
+            </div>
+        </div>
+    </header>
+
+    <div class="case-study-body">
+
+        <!-- 2. Project Overview -->
+        <section id="project-overview" class="cs-section alt-bg">
+            <div class="cs-container">
+                <h2 class="cs-section-title">Project Overview</h2>
+                <iframe class="youtube-video" width="990" height="556.88" src="https://www.youtube.com/embed/3u8K24Xy4E0" title="Tráiler ruta G66" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+                <p class="cs-text">
+                    In <strong>Rout G-66</strong>, you take on the role of the driver for the ghost route "G66" traversing the historic La Candelaria neighborhood of Bogotá. On your journey, your task is to pick up lost souls. You must analyze each passenger's identity carefully to prevent any mortal from infiltrating the bus and disturbing the imminent silence—a mistake that would mean your ultimate end.
+                </p>
+                
+                <div class="overview-grid">
+                    <div class="overview-card">
+                        <h3>The Challenge</h3>
+                        <p class="cs-text" style="font-size: 1rem; margin-bottom: 0;">
+                            The goal was to create a psychological suspense and decision-making game with an immersive atmosphere. We needed to develop a UI and mechanic that forces the player into high-pressure analysis to distinguish between spirits and the living, without relying on cheap jump scares.
+                        </p>
+                    </div>
+                    <div class="overview-card">
+                        <h3>The Solution</h3>
+                        <p class="cs-text" style="font-size: 1rem; margin-bottom: 0;">
+                            We designed a retro, pixel-art style interface that emulates classic horror games. By implementing a strict visual timer for every passenger interaction, combined with deeply unsettling audio design rooted in local Colombian culture, we created a truly tension-filled experience focused on careful deduction.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. My Role -->
+        <section class="cs-section">
+            <div class="cs-container">
+                <h2 class="cs-section-title">My Role & Contributions</h2>
+                <p class="cs-text">
+                    As one of the core creators of Rout G-66, I wore multiple hats to bring this psychological horror experience from a concept to a playable game. My responsibilities spanned across the entire product lifecycle:
+                </p>
+                
+                <div class="overview-grid" style="margin-top: 3rem;">
+                    <div class="overview-card" style="border-top: none; border-left: 4px solid var(--g66-accent);">
+                        <h4 style="color: var(--g66-accent-hover); font-family: 'Oswald', sans-serif; font-size: 1.3rem; margin-bottom: 1rem; text-transform: uppercase;">UX Research & UI Design</h4>
+                        <p class="cs-text" style="font-size: 0.95rem; margin-bottom: 0;">I led the foundational research to understand our player profiles and designed the retro, pixel-art interface, ensuring the menus, visual timers, and layout induced the right amount of psychological tension.</p>
+                    </div>
+                    <div class="overview-card" style="border-top: none; border-left: 4px solid var(--g66-accent);">
+                        <h4 style="color: var(--g66-accent-hover); font-family: 'Oswald', sans-serif; font-size: 1.3rem; margin-bottom: 1rem; text-transform: uppercase;">Scenario Design & Development</h4>
+                        <p class="cs-text" style="font-size: 0.95rem; margin-bottom: 0;">Beyond the visual design, I was in charge of crafting the atmospheric scenario of the ghost bus navigating through La Candelaria. I also actively developed the game in Unity, bringing the UI, interactions, and immersive audio logic to life.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. The Urban Legend Context -->
+        <section class="cs-section alt-bg">
+            <div class="cs-container">
+                <h2 class="cs-section-title">The Legend of the G-66</h2>
+                
+                <div style="width: 100%; margin-bottom: 2.5rem; border-radius: 15px; overflow: hidden; border: 1px solid var(--border-color); box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5); background-color: var(--g66-panel);">
+                    <!-- Placeholder for the legend image. Replace the src with your actual image path -->
+                    <img src="../Img/g-66-imagen.png" alt="The Ghost Bus G-66 Urban Legend" style="width: 100%; height: auto; display: block; object-fit: cover; max-height: 400px; opacity: 0.85;">
+                </div>
+
+                <p class="cs-text">
+                    Bogotá is a city rich in myths, but few are as chilling as the urban legend of the phantom bus route: the <strong>G-66</strong>. According to local lore, this ghostly transit vehicle roams the desolate streets of the capital late at night, appearing only to lonely commuters.
+                </p>
+                
+                <div style="border-left: 4px solid var(--g66-accent); padding-left: 2rem; margin: 3rem 0; background: rgba(0, 0, 0, 0.4); padding: 2rem; border-radius: 0 15px 15px 0; border-top: 1px solid var(--border-color); border-right: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color);">
+                    <p style="font-family: 'Oswald', sans-serif; font-size: 1.5rem; color: var(--g66-light); margin-bottom: 1rem; line-height: 1.4;">
+                        "Those who board the G-66 never reach their earthly destination. They join a silent ride bound for the afterlife."
+                    </p>
+                    <p class="cs-text" style="margin-bottom: 0; font-size: 1rem; color: var(--g66-accent-hover);">
+                        — Bogotano Urban Legend
+                    </p>
+                </div>
+
+                <p class="cs-text">
+                    By rooting our game in this deeply cultural narrative, we tapped into a familiar sense of dread for local players while introducing international audiences to a captivating piece of Colombian folklore. The historic La Candelaria neighborhood, with its colonial architecture and narrow, shadowy streets, serves as the perfect atmospheric backdrop for this haunting journey.
+                </p>
+            </div>
+        </section>
+
+        <!-- 5. Target Audience -->
+        <section class="cs-section">
+            <div class="cs-container">
+                <h2 class="cs-section-title">Target Audience</h2>
+                <p class="cs-text">
+                    To ensure the game resonated with the right players, we tailored the mechanics, aesthetics, and narrative around three distinct user profiles:
+                </p>
+                
+                <div class="audience-grid">
+                    <div class="audience-card">
+                        <h4>Retro Enthusiasts</h4>
+                        <p>Players deeply interested in retro gaming aesthetics, nostalgic pixel art, and classic interface design.</p>
+                    </div>
+                    <div class="audience-card">
+                        <h4>Horror & Mystery Admirers</h4>
+                        <p>Fans of the psychological thriller genre who seek an experience that combines a paranormal narrative with touches of realism.</p>
+                    </div>
+                    <div class="audience-card">
+                        <h4>Local Cultures</h4>
+                        <p>Users who appreciate cultural connections. The game draws heavily on the rich urban legends of Bogotá's capital city to ground the horror in reality.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 6. First Paper Prototypes -->
+        <section class="cs-section alt-bg">
+            <div class="cs-container">
+                <h2 class="cs-section-title">First Paper Prototypes</h2>
+                <p class="cs-text">
+                    Before moving to digital tools like Figma or Unity, the core concepts, UI layouts, and scenarios were sketched out on paper. This rapid prototyping phase allowed us to iterate quickly on the placement of the visual timer, passenger dialogue boxes, and overall screen flow without getting bogged down by details.
+                </p>
+                
+                <div class="paper-prototype-grid">
+                    <!-- Placeholder 1 -->
+                    <div class="paper-img-container">
+                        <img src="../Img/Ruta G66 paper prototipe 01.png" alt="Paper Prototype 1 - Main Menu Layout">
+                    </div>
+                    
+                    <!-- Placeholder 2 -->
+                    <div class="paper-img-container">
+                        <img src="../Img/Ruta G66 paper prototipe 02.png" alt="Paper Prototype 2 - In-Game UI">
+                    </div>
+                    
+                    <!-- Placeholder 3 -->
+                    <div class="paper-img-container">
+                        <img src="../Img/Ruta G66 paper prototipe 03.png" alt="Paper Prototype 3 - Scenario Sketch">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 7. High-Fidelity UI Showcase -->
+        <section class="cs-section">
+            <div class="cs-container">
+                <h2 class="cs-section-title">Core UI & Audio Experiences</h2>
+                <p class="cs-text">
+                    A deep dive into how interface design and sound engineering work together to induce psychological suspense.
+                </p>
+                
+                <!-- Showcase 1: The Mechanic -->
+                <div class="ui-showcase-block">
+                    <div class="ui-text-content">
+                        <h3><span>Game Mechanics</span>Pressure & Decision Making</h3>
+                        <p class="cs-text">The core interaction revolves around time and pressure. The player must carefully read passenger descriptions and analyze visual clues to decide who gets on the bus and who gets left behind. Every choice is restricted by a strict <strong>visual timer</strong>, forcing players to make split-second deductions. If a mortal slips through, the game ends.</p>
+                    </div>
+                    <div class="ui-mockup-placeholder">
+                        <img src="../Img/g-66-Ingame.png" alt="In-Game UI">
+                        <div class="mockup-label">In-Game UI</div>
+                    </div>
+                </div>
+
+                <!-- Showcase 2: Sound Design (Reversed) -->
+                <div class="ui-showcase-block reverse">
+                    <div class="ui-text-content">
+                        <h3><span>Immersive Atmosphere</span>Sound & UI Synergy</h3>
+                        <p class="cs-text">Every button and menu interaction acts as a trigger for environmental sounds. The menus feature radio static and fragments of old broadcasts. Inside the bus, players hear the vehicle moving, brakes screeching, and random unsettling whispers or bells. The background music consists of typical Colombian tracks, heavily distorted to generate unease.</p>
+                    </div>
+                    <div class="ui-mockup-placeholder">
+                        <img src="../Img/g-66-scene.png" alt="Cinematics & Audio">
+                        <div class="mockup-label">Cinematics & Audio</div>
+                    </div>
+                </div>
+                
+                <!-- Showcase 3: Menus -->
+                <div class="ui-showcase-block">
+                    <div class="ui-text-content">
+                        <h3><span>Retro Interface</span>Main Menus & Flow</h3>
+                        <p class="cs-text">The UI was designed to feel like a classic arcade horror game. From the eerie introductory cinematic dialogue—<em>"Tonight you must take the souls to their final destination..."</em>—to the main menu screens ("Start", "How to Play", "Hidden Truth"), everything utilizes minimal colors and pixel-perfect typography. The feedback loops include distinct "You survived the night" or "You lost" screens.</p>
+                    </div>
+                    <div class="ui-mockup-placeholder">
+                        <img src="../Img/g-66-menu.png" alt="Main Menu">
+                        <div class="mockup-label">Menu System</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 8. Conclusion / Takeaways -->
+        <section class="cs-section alt-bg">
+            <div class="cs-container" style="text-align: center; max-width: 800px;">
+                <h2 class="cs-section-title" style="display: inline-block; padding-bottom: 1rem;">Key Takeaways</h2>
+                <p class="cs-text" style="margin-top: 2rem;">
+                    Designing <strong>Rout G-66</strong> reinforced how vital the connection between UI and Sound Design is in the horror genre. By relying on a strict color palette and minimal pixel art, we proved that psychological suspense doesn't require complex 3D graphics—it requires a solid mechanic (time-pressured decision making), immersive audio, and a culturally compelling narrative.
+                </p>
+            </div>
+        </section>
+
+        <!-- 9. Final Result (CTA) -->
+        <section class="cs-section">
+            <div class="cs-container" style="text-align: center; max-width: 800px;">
+                <h2 class="cs-section-title" style="display: inline-block; padding-bottom: 1rem;">The Final Result</h2>
+                <p class="cs-text" style="margin-top: 2rem; margin-bottom: 3rem;">
+                    Check out the full Itch.io page to see the final MVP product.
+                </p>
+                <a href="https://nidumar.itch.io/g-66-ruta-fantasma" target="_blank" class="btn-final-result">View Project on Itch.io</a>
+            </div>
+        </section>
+
+    </div>
+
+    <!-- Footer Section -->
+    <footer class="site-footer">
+        <div class="footer-content section-padding" style="padding-top: 4rem; padding-bottom: 4rem;">
+            <div class="footer-brand">
+                <h3>NICKOLAY MARTINEZ</h3>
+                <p>Digital Designer & Front-end Developer</p>
+            </div>
+            
+            <div class="footer-contact">
+                <div class="footer-col">
+                    <span>Email:</span>
+                    <a href="mailto:nickolay.martinezd@gmail.com">nickolay.martinezd@gmail.com</a>
+                </div>
+                <div class="footer-col">
+                    <span>Social:</span>
+                    <div class="footer-socials">
+                        <a href="#">Behance</a>
+                        <a href="#">Dribbble</a>
+                        <a href="#">LinkedIn</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2026 Nickolay Martinez. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <div id="smartScrollWrapper" class="smart-scroll-wrapper">
+        <button id="smartScrollBtn" class="smart-scroll-btn" aria-label="Scroll page">
+            <svg class="scroll-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+        </button>
+    </div>
+
+    <!-- Include the main JS file for navbar interactions and scroll animations -->
+    <script src="../Js/script.js"></script>
+</body>
+</html>
