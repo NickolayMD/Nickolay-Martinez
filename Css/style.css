@@ -680,7 +680,7 @@ input:focus, select:focus, textarea:focus { outline: 1px solid var(--accent-teal
         order: unset; /* Stops it from being pushed to the bottom */
         width: auto;  /* Stops it from taking up the full width */
         margin-top: 0; 
-        gap: 3rem; /* Tighter gap between the text links */
+        gap: 1rem; /* Tighter gap between the text links */
     }
     
     .nav-links a { 
