@@ -662,8 +662,9 @@ input:focus, select:focus, textarea:focus { outline: 1px solid var(--accent-teal
 }
 
 @media (max-width: 768px) {
+    
     .navbar { 
-        flex-wrap: wrap; 
+        flex-wrap: nowrap; /* Forces everything onto a single line */
         justify-content: space-between; 
         top: 0; 
         width: 100%;
@@ -671,10 +672,25 @@ input:focus, select:focus, textarea:focus { outline: 1px solid var(--accent-teal
         border-radius: 0; 
         border: none;
         border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-        padding: 1rem 1.5rem;
+        padding: 0.8rem 1rem; /* Slightly tighter padding */
+        gap: 0.5rem; /* Overrides the large 2rem desktop gap */
     }
     
-    .nav-links { order: 3; width: 100%; justify-content: center; margin-top: 1rem; }
+    .nav-links { 
+        order: unset; /* Stops it from being pushed to the bottom */
+        width: auto;  /* Stops it from taking up the full width */
+        margin-top: 0; 
+        gap: 3rem; /* Tighter gap between the text links */
+    }
+    
+    .nav-links a { 
+        font-size: 1rem; 
+    }
+    
+    .nav-contact {
+        padding: 6px 16px;
+        font-size: 0.85rem;
+    }
     
     .hero { padding-top: 10rem; padding-bottom: 5rem; min-height: auto; }
     
