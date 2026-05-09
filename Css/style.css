@@ -741,7 +741,10 @@ input:focus, select:focus, textarea:focus { outline: 1px solid var(--accent-teal
 }
 
 @media (max-width: 368px){
-    .hero h1 {font-size: 3rem;}
-    .section-padding h2 {font-size: 1rem;}
-    .highlight {font-size: 3rem;}
+    .hero h1 {font-size: 4rem;}
+    .section-padding h2 {font-size: 3rem;}
+
+    .name {line-height: 3rem;}
+    
+    .highlight {font-size: 6rem;}
 }
