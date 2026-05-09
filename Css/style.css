@@ -747,4 +747,11 @@ input:focus, select:focus, textarea:focus { outline: 1px solid var(--accent-teal
     .name {line-height: 3rem;}
     
     .highlight {font-size: 6rem;}
+
+    .nav-links { 
+        order: unset; /* Stops it from being pushed to the bottom */
+        width: auto;  /* Stops it from taking up the full width */
+        margin-top: 0; 
+        gap: 1rem; /* Tighter gap between the text links */
+    }
 }
