@@ -680,7 +680,7 @@ input:focus, select:focus, textarea:focus { outline: 1px solid var(--accent-teal
         order: unset; /* Stops it from being pushed to the bottom */
         width: auto;  /* Stops it from taking up the full width */
         margin-top: 0; 
-        gap: 3rem; /* Tighter gap between the text links */
+        gap: 1rem; /* Tighter gap between the text links */
     }
     
     .nav-links a { 
@@ -738,4 +738,20 @@ input:focus, select:focus, textarea:focus { outline: 1px solid var(--accent-teal
     .smart-scroll-btn { width: 50px; height: 50px; }
     .smart-scroll-btn svg { width: 24px; height: 24px; }
     
+}
+
+@media (max-width: 368px){
+    .hero h1 {font-size: 4rem;}
+    .section-padding h2 {font-size: 3rem;}
+
+    .name {line-height: 3rem;}
+    
+    .highlight {font-size: 6rem;}
+
+    .nav-links { 
+        order: unset; /* Stops it from being pushed to the bottom */
+        width: auto;  /* Stops it from taking up the full width */
+        margin-top: 0; 
+        gap: 1rem; /* Tighter gap between the text links */
+    }
 }
