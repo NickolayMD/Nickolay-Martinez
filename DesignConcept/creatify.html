@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Creatify | Design Concept</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Oswald:wght@500;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="../Css/style.css">
+    
+    <style>
+        /* --- BRAND OVERRIDES --- */
+        :root {
+            /* Swaps out your global Teal for the Creatify Blue */
+            --accent-teal: #4C6EF5; 
+        }
+
+        /* Specific tweaks for the Case Study page */
+        .concept-hero {
+            padding-top: 12rem;
+            text-align: center;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        .meta-tags {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .meta-tag {
+            background-color: var(--bg-panel);
+            /* Uses the newly overridden blue */
+            color: var(--accent-teal); 
+            font-family: var(--font-heading);
+            padding: 8px 20px;
+            border-radius: 30px;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        /* Responsive Figma Embed Container */
+        .figma-container {
+            position: relative;
+            width: 100%;
+            height: 800px;
+            border-radius: 20px;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+            /* Gives the shadow a very subtle blue tint to match the brand */
+            box-shadow: 0 20px 40px rgba(76, 110, 245, 0.15); 
+            background-color: var(--bg-panel);
+        }
+
+        .figma-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        /* --- UI Feature Showcase Styles --- */
+        .ui-showcase-block {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            margin-top: 6rem;
+        }
+        
+        /* Reverses the order for the middle row */
+        .ui-showcase-block.reverse {
+            direction: rtl; 
+        }
+        .ui-showcase-block.reverse > * {
+            direction: ltr; /* Keeps text reading left-to-right inside the reversed container */
+        }
+
+        .ui-mockup-placeholder img {
+            width: 100%;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+            border: 1px solid var(--border-color);
+        }
+
+        /* Mobile Stacking */
+        @media (max-width: 992px) {
+            .ui-showcase-block {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+                margin-top: 4rem;
+            }
+            .ui-showcase-block.reverse {
+                direction: ltr; /* Turns off reverse on mobile so text always comes first */
+            }
+        }
+
+        @media (max-width: 768px) {
+            .figma-container {
+                height: 500px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="nav-brand">
+            <a href="../index.html"><img src="../Img/profile-small.png" alt="Nickolay Profile" class="nav-profile-pic"></a>
+        </div>
+        <ul class="nav-links">
+            <li><a href="../index.html#home">Home</a></li>
+            <li><a href="../about.html">About</a></li>
+            <li><a href="../projects.html" style="color: var(--accent-teal);">Projects</a></li>
+        </ul>
+        <a href="../index.html#contact" class="btn-primary nav-contact">Contact</a>
+    </nav>
+
+    <header class="section-padding concept-hero">
+        <span style="color: var(--text-muted); font-family: var(--font-heading); letter-spacing: 2px; text-transform: uppercase;">Design Concept • 2-Day Sprint</span>
+        <h1 class="highlight" style="font-size: clamp(3.5rem, 8vw, 6rem); line-height: 1; margin: 1rem 0;">CREATIFY</h1>
+        <p style="font-size: 1.2rem; color: var(--text-light);">Your space to create without limits. A minimalist dashboard designed to revolutionize how creatives organize ideas, replacing rigid text documents with a dynamic, multimedia workspace.</p>
+        
+        <div class="meta-tags">
+            <span class="meta-tag">UI / UX Design</span>
+            <span class="meta-tag">Figma</span>
+            <span class="meta-tag">Ideation Sprint</span>
+        </div>
+    </header>
+
+    <section style="background-color: var(--bg-darker); width: 100%;">
+        <div class="section-padding grid-2-col">
+            <div class="overview-text">
+                <h2 style="font-size: 2.5rem; margin-bottom: 1.5rem; color: var(--accent-teal);">The Challenge</h2>
+                <p style="font-size: 1.05rem; margin-bottom: 1.5rem;">
+                    Most creatives—copywriters, advertisers, and designers—are forced to draft their concepts in standard word processors. Because these interfaces are flat and built for formal documents, they offer zero inspiration and make it incredibly difficult to organize multimedia references by client or project.
+                </p>
+                <p style="font-size: 1.05rem;">
+                    <strong>The Goal:</strong> Design a "Dashboard" platform in a 2-day sprint that allows users to easily organize their ideas, backed by a clean, minimalist UI and disruptive, non-linear navigation.
+                </p>
+            </div>
+
+            <div class="objectives-list" style="background-color: var(--bg-panel); padding: 3rem; border-radius: 20px; border-left: 4px solid var(--accent-teal);">
+                <h3 style="font-family: var(--font-heading); font-size: 1.5rem; margin-bottom: 1.5rem; letter-spacing: 1px;">KEY FEATURES</h3>
+                <ul style="list-style: none; padding: 0;">
+                    <li style="margin-bottom: 1rem; position: relative; padding-left: 25px;">
+                        <span style="position: absolute; left: 0; color: var(--accent-teal);">✦</span>
+                        <strong>Multimedia Integration:</strong> Seamlessly mix text, images, and visual references in the same environment.
+                    </li>
+                    <li style="margin-bottom: 1rem; position: relative; padding-left: 25px;">
+                        <span style="position: absolute; left: 0; color: var(--accent-teal);">✦</span>
+                        <strong>Smart Organization:</strong> A robust tagging system and intuitive sidebar to sort files by client and project instantly.
+                    </li>
+                    <li style="margin-bottom: 1rem; position: relative; padding-left: 25px;">
+                        <span style="position: absolute; left: 0; color: var(--accent-teal);">✦</span>
+                        <strong>Collaboration Tools:</strong> Online cooperation, change tracking, and an integrated AI widget to assist ideation.
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+<section class="section-padding">
+        <div style="text-align: center; margin-bottom: 2rem;">
+            <h2 style="font-size: 2.5rem; margin-bottom: 1rem;">Core Features</h2>
+            <p style="color: var(--text-muted); max-width: 600px; margin: 0 auto; font-size: 1.1rem;">A closer look at how Creatify redefines the creative workflow.</p>
+        </div>
+
+        <div class="ui-showcase-block">
+            <div class="ui-text-content">
+                <h3 style="font-size: 2rem; color: var(--text-light); margin-bottom: 1rem;">
+                    <span style="color: var(--accent-teal); display: block; font-size: 1rem; text-transform: uppercase; letter-spacing: 2px; font-family: var(--font-heading); margin-bottom: 0.5rem;">Workspace Management</span>
+                    Smart Organization
+                </h3>
+                <p style="color: var(--text-muted); font-size: 1.1rem; line-height: 1.8;">
+                    Ditch the endless folders. The sidebar gives you instant access to clients, recent projects, and quick previews. Everything is a click away, allowing you to spend less time digging and more time creating.
+                </p>
+            </div>
+            <div class="ui-mockup-placeholder">
+                <img src="../Img/creatify-feature1.png" alt="Creatify Dashboard UI">
+            </div>
+        </div>
+
+        <div class="ui-showcase-block reverse">
+            <div class="ui-text-content">
+                <h3 style="font-size: 2rem; color: var(--text-light); margin-bottom: 1rem;">
+                    <span style="color: var(--accent-teal); display: block; font-size: 1rem; text-transform: uppercase; letter-spacing: 2px; font-family: var(--font-heading); margin-bottom: 0.5rem;">Dynamic Canvas</span>
+                    Multimedia Integration
+                </h3>
+                <p style="color: var(--text-muted); font-size: 1.1rem; line-height: 1.8;">
+                    Write copy, drop visual references, and tag elements all in the same space. The central whiteboard breaks the limits of a traditional text document, letting ideas flow non-linearly.
+                </p>
+            </div>
+            <div class="ui-mockup-placeholder">
+                <img src="../Img/creatify-feature2.png" alt="Creatify Whiteboard UI">
+            </div>
+        </div>
+
+    </section>
+
+    <section class="section-padding" style="text-align: center;">
+        <h2 style="font-size: 2.5rem; margin-bottom: 1rem;">Interactive Prototype</h2>
+        <p style="margin-bottom: 3rem; color: var(--text-muted);">Explore the high-fidelity UI below. Feel free to click around and test the navigation flows.</p>
+        
+        <div class="figma-container">
+            <iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" src="https://embed.figma.com/proto/clvAySDMHnzUmXFbd3eb79/Creatify---Nickolay-Martinez?node-id=116-4472&p=f&viewport=1150%2C396%2C0.16&scaling=contain&content-scaling=fixed&starting-point-node-id=155%3A4391&page-id=1%3A2&embed-host=share" allowfullscreen></iframe>
+        </div>
+    </section>
+
+    <footer class="site-footer">
+        <div class="footer-content section-padding" style="padding-top: 4rem; padding-bottom: 4rem;">
+            <div class="footer-brand">
+                <h3>NICKOLAY MARTINEZ</h3>
+                <p>Digital Designer & Front-end Developer</p>
+            </div>
+            
+            <div class="footer-contact">
+                <div class="footer-col">
+                    <span>Email:</span>
+                    <a href="mailto:nickolay.martinezd@gmail.com">nickolay.martinezd@gmail.com</a>
+                </div>
+                <div class="footer-col">
+                    <span>Social:</span>
+                    <div class="footer-socials">
+                        <a href="https://www.behance.net/nickolamartine1">Behance</a>
+                        <a href="#">Dribbble</a>
+                        <a href="https://www.linkedin.com/in/nickolay-martinez-657822303/?locale=en">LinkedIn</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2026 Nickolay Martinez. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <div id="smartScrollWrapper" class="smart-scroll-wrapper" data-target=".figma-container">
+        <button id="smartScrollBtn" class="smart-scroll-btn" aria-label="Scroll page">
+            <svg class="scroll-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+        </button>
+    </div>
+
+    <script src="../Js/script.js"></script>
+</body>
+</html>
