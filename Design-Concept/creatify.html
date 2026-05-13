@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Creatify | Design Concept</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Oswald:wght@500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../Css/style.css">
+    
+    <style>
+        /* Specific tweaks for the Case Study page */
+        .concept-hero {
+            padding-top: 12rem;
+            text-align: center;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        .meta-tags {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .meta-tag {
+            background-color: var(--bg-panel);
+            color: var(--accent-teal);
+            font-family: var(--font-heading);
+            padding: 8px 20px;
+            border-radius: 30px;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        /* Responsive Figma Embed Container */
+        .figma-container {
+            position: relative;
+            width: 100%;
+            height: 800px; /* Large height for desktop viewing */
+            border-radius: 20px;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+            background-color: var(--bg-panel);
+        }
+
+        .figma-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        @media (max-width: 768px) {
+            .figma-container {
+                height: 500px; /* Smaller height for mobile */
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="nav-brand">
+            <a href="index.html"><img src="Img/profile-small.png" alt="Nickolay Profile" class="nav-profile-pic"></a>
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html#home">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="projects.html" style="color: var(--accent-teal);">Projects</a></li>
+        </ul>
+        <a href="index.html#contact" class="btn-primary nav-contact">Contact</a>
+    </nav>
+
+    <header class="section-padding concept-hero">
+        <span style="color: var(--text-muted); font-family: var(--font-heading); letter-spacing: 2px; text-transform: uppercase;">Design Concept • 2-Day Sprint</span>
+        <h1 class="highlight" style="font-size: clamp(3.5rem, 8vw, 6rem); line-height: 1; margin: 1rem 0;">CREATIFY</h1>
+        <p style="font-size: 1.2rem; color: var(--text-light);">Your space to create without limits. A minimalist dashboard designed to revolutionize how creatives organize ideas, replacing rigid text documents with a dynamic, multimedia workspace.</p>
+        
+        <div class="meta-tags">
+            <span class="meta-tag">UI / UX Design</span>
+            <span class="meta-tag">Figma</span>
+            <span class="meta-tag">Ideation Sprint</span>
+        </div>
+    </header>
+
+    <section class="section-padding grid-2-col" style="background-color: var(--bg-darker); width: 100%;">
+        <div class="overview-text">
+            <h2 style="font-size: 2.5rem; margin-bottom: 1.5rem; color: var(--accent-teal);">The Challenge</h2>
+            <p style="font-size: 1.05rem; margin-bottom: 1.5rem;">
+                Most creatives—copywriters, advertisers, and designers—are forced to draft their concepts in standard word processors. Because these interfaces are flat and built for formal documents, they offer zero inspiration and make it incredibly difficult to organize multimedia references by client or project.
+            </p>
+            <p style="font-size: 1.05rem;">
+                <strong>The Goal:</strong> Design a "Dashboard" platform in a 2-day sprint that allows users to easily organize their ideas, backed by a clean, minimalist UI and disruptive, non-linear navigation.
+            </p>
+        </div>
+
+        <div class="objectives-list" style="background-color: var(--bg-panel); padding: 3rem; border-radius: 20px; border-left: 4px solid var(--accent-teal);">
+            <h3 style="font-family: var(--font-heading); font-size: 1.5rem; margin-bottom: 1.5rem; letter-spacing: 1px;">KEY FEATURES</h3>
+            <ul style="list-style: none; padding: 0;">
+                <li style="margin-bottom: 1rem; position: relative; padding-left: 25px;">
+                    <span style="position: absolute; left: 0; color: var(--accent-teal);">✦</span>
+                    <strong>Multimedia Integration:</strong> Seamlessly mix text, images, and visual references in the same environment.
+                </li>
+                <li style="margin-bottom: 1rem; position: relative; padding-left: 25px;">
+                    <span style="position: absolute; left: 0; color: var(--accent-teal);">✦</span>
+                    <strong>Smart Organization:</strong> A robust tagging system and intuitive sidebar to sort files by client and project instantly.
+                </li>
+                <li style="margin-bottom: 1rem; position: relative; padding-left: 25px;">
+                    <span style="position: absolute; left: 0; color: var(--accent-teal);">✦</span>
+                    <strong>Collaboration Tools:</strong> Online cooperation, change tracking, and an integrated AI widget to assist ideation.
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="section-padding" style="text-align: center;">
+        <h2 style="font-size: 2.5rem; margin-bottom: 1rem;">Interactive Prototype</h2>
+        <p style="margin-bottom: 3rem; color: var(--text-muted);">Explore the high-fidelity UI below. Feel free to click around and test the navigation flows.</p>
+        
+        <div class="figma-container">
+            <iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" src="https://www.figma.com/proto/clvAySDMHnzUmXFbd3eb79/Creatify---Nickolay-Martinez?node-id=116-4472&viewport=823%2C245%2C0.34&t=QZ5Ob89JsDvjzZ9G-1&scaling=contain&content-scaling=fixed&starting-point-node-id=155%3A4391&page-id=1%3A2" allowfullscreen></iframe>
+        </div>
+    </section>
+
+    <footer class="site-footer">
+        <div class="footer-content section-padding" style="padding-top: 4rem; padding-bottom: 4rem;">
+            <div class="footer-brand">
+                <h3>NICKOLAY MARTINEZ</h3>
+                <p>Digital Designer & Front-end Developer</p>
+            </div>
+            
+            <div class="footer-contact">
+                <div class="footer-col">
+                    <span>Email:</span>
+                    <a href="mailto:nickolay.martinezd@gmail.com">nickolay.martinezd@gmail.com</a>
+                </div>
+                <div class="footer-col">
+                    <span>Social:</span>
+                    <div class="footer-socials">
+                        <a href="https://www.behance.net/nickolamartine1">Behance</a>
+                        <a href="#">Dribbble</a>
+                        <a href="https://www.linkedin.com/in/nickolay-martinez-657822303/?locale=en">LinkedIn</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2026 Nickolay Martinez. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <div id="smartScrollWrapper" class="smart-scroll-wrapper" data-target=".figma-container">
+        <button id="smartScrollBtn" class="smart-scroll-btn" aria-label="Scroll page">
+            <svg class="scroll-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+        </button>
+    </div>
+
+    <script src="Js/script.js"></script>
+</body>
+</html>
